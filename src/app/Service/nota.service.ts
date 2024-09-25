@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class NotaService {
 
-  constructor() { }
+  [x: string]: any;
+  private urlEndPoint: string ='http://localhost:8080/Sisnot/Notas'
+  constructor(private http:HttpClient) { }
+
 }
