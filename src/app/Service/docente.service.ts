@@ -15,5 +15,22 @@ export class DocenteService {
   getAllDocentes():Observable<Docente[]>{
     return this.http.get<any[]>(this.urlEndPoint);
   }
+
+  
+  getDocenteById(id:number):Observable<Docente>{
+    return this.http.get<Docente>(this.urlEndPoint+'/'+id);
+  }
+
+  createDocente(docente:Docente): Observable<Docente>{
+    return this.http.post<Docente>(this.urlEndPoint,docente);
+  }
+  
+  updateDocente(docente:Docente): Observable<Docente>{
+    return this.http.put<Docente>(this.urlEndPoint+'/'+docente.id,docente);
+  }
+
+  deleteDocente(id:number):Observable<any>{
+    return this.http.delete(this.urlEndPoint+'/'+id);
+  }
   
 }

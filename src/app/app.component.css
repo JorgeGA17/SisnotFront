@@ -1,0 +1,8 @@
+.navbar-nav > div {
+    margin-right: 20px; /* Ajusta este valor según sea necesario */
+  
+  }
+
+  .navbar {
+    background-color: #000; /* or any other hex code for black */
+  }

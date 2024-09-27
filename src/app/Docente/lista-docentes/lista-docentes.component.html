@@ -1,1 +1,22 @@
-<p>lista-docentes works!</p>
+
+<table id="example" class="table" style="width:100%">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Email</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let docente of docentes ; let i=index">
+        <td>{{i+1}}</td>
+        <td>{{docente.nombre}}</td>
+        <td>{{docente.email}}</td>
+        <td>
+          <button (click)="updateDocente(docente.id)" class="btn btn-success">Editar</button>
+          <button (click)="deleteDocente(docente.id)" class="btn btn-danger ml-2">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

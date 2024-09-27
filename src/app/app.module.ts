@@ -12,9 +12,10 @@ import { RegistrarCursoComponent } from './Curso/registrar-curso/registrar-curso
 import { ListaCursosComponent } from './Curso/lista-cursos/lista-cursos.component';
 import { ActualizarCursosComponent } from './Curso/actualizar-cursos/actualizar-cursos.component';
 import { ActualizarNotasComponent } from './Nota/actualizar-notas/actualizar-notas.component';
-import { RegistarNotasComponent } from './Nota/registar-notas/registar-notas.component';
 import { ListaNotasComponent } from './Nota/lista-notas/lista-notas.component';
 import { RegistarNotaComponent } from './Nota/registar-nota/registar-nota.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,13 +30,15 @@ import { RegistarNotaComponent } from './Nota/registar-nota/registar-nota.compon
     ListaCursosComponent,
     ActualizarCursosComponent,
     ActualizarNotasComponent,
-    RegistarNotasComponent,
     ListaNotasComponent,
     RegistarNotaComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
