@@ -16,6 +16,7 @@ import { ListaNotasComponent } from './Nota/lista-notas/lista-notas.component';
 import { RegistarNotaComponent } from './Nota/registar-nota/registar-nota.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { FormsModule } from '@angular/forms';
     ActualizarCursosComponent,
     ActualizarNotasComponent,
     ListaNotasComponent,
-    RegistarNotaComponent
+    RegistarNotaComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

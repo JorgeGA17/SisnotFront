@@ -7,12 +7,13 @@ import { Docente } from '../../models/docente';
 @Component({
   selector: 'app-lista-docentes',
   templateUrl: './lista-docentes.component.html',
-  styleUrl: './lista-docentes.component.css'
+  styleUrl: './lista-docentes.component.css'  
 })
 export class ListaDocentesComponent implements OnInit{
 
   
   docentes: Docente[];
+  filterDocente='';
 
   constructor (private docenteService:DocenteService, private router:Router){}
   
@@ -31,12 +32,13 @@ export class ListaDocentesComponent implements OnInit{
       this.router.navigate(['actualizar-docente',id]);
     }
 
-    deleteDocente(id:number){
-      this.docenteService.deleteDocente(id).subscribe(dato=>{
-        console.log(dato);
-        this.getDocentes()
-      })
-
+    deleteDocente(id: number) {
+      console.log('Eliminando docente con ID:', id);  // Para verificar el ID en la consola
+      this.docenteService.deleteDocente(id).subscribe(dato => {
+        console.log('Resultado de la eliminación:', dato);
+        this.getDocentes();  // Vuelve a cargar la lista después de la eliminación
+      });
     }
+    
 
 }
