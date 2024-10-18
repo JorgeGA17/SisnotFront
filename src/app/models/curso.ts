@@ -5,8 +5,6 @@ ciclo: string;
 credito:string;
 estado:string;
 listaDocentes:string;
-listaAlumnos:string;
-listaNotas:string;
 
 }
 

@@ -33,10 +33,8 @@ export class ListaDocentesComponent implements OnInit{
     }
 
     deleteDocente(id: number) {
-      console.log('Eliminando docente con ID:', id);  // Para verificar el ID en la consola
       this.docenteService.deleteDocente(id).subscribe(dato => {
-        console.log('Resultado de la eliminación:', dato);
-        this.getDocentes();  // Vuelve a cargar la lista después de la eliminación
+        this.getDocentes(); 
       });
     }
     

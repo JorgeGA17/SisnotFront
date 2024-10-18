@@ -6,10 +6,9 @@ export class Docente {
     nombre: string;
     dni: string;
     direccion: string;
-    email:string;
+    email: string;
     celular: string;
     estado: string;
-    listaAlumnos: string;
-    listaCursos:string;
-    
+    cursoIds: number[]; // Cambiado a un arreglo de números
+    listaCursos: string;
 }

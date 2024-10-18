@@ -7,4 +7,9 @@ notaParcial: number;
 componente3Nota: number;
 componente4Nota: number;
 notaFinal: number;
+promedioFinal: number;
+alumnoId:number;
+cursoId: number;
+fechaRegistro:Date;
+
 }

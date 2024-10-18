@@ -8,8 +8,8 @@ export class Alumno {
     email:string;
     celular: string;
     estado: string;
-    notasFinales:string;
-    docenteNombres: string;
+    cursoIds: string;
     listaCursos: string;
+    fechaIngreso:Date;
     
 }
