@@ -19,6 +19,7 @@ import { FormsModule } from '@angular/forms';
 import { FilterPipe } from './pipes/filter.pipe';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { VisitasComponent } from "./visitas/visitas.component";
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { VisitasComponent } from "./visitas/visitas.component";
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgSelectModule
+    NgSelectModule,
+    CommonModule
 ],
   providers: [],
   bootstrap: [AppComponent]

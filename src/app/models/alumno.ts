@@ -1,3 +1,5 @@
+import { Curso } from "./curso";
+
 export class Alumno {
     id: number;
     apellidoPaterno: string;
@@ -9,7 +11,7 @@ export class Alumno {
     celular: string;
     estado: string;
     cursoIds: number[];
-    listaCursos: string;
+    listaCursos: Curso[];
     fechaIngreso:Date;
     
 }

@@ -1,0 +1,98 @@
+.detalle-alumno-container {
+    background-color: #fff; /* fondo blanco */
+    padding: 20px; /* espacio interno */
+    border: 1px solid #ddd; /* borde gris claro */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* sombra para dar profundidad */
+    max-width: 80%; /* ancho máximo del 70% */
+    margin-left: auto; /* centrar horizontalmente */
+    margin-right: auto; /* centrar horizontalmente */
+  }
+  
+  .detalle-alumno {
+    margin-top: calc(50px + 20px); /* ajusta el margen superior para que el contenido se desplace hacia abajo */
+  }
+  
+  .detalle-alumno h1 {
+  
+    text-align: left;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 10px;
+  }
+  
+  .grid-item {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    text-align: justify;
+  }
+  
+  .grid-item:nth-child(odd) {
+    font-weight: bold;
+  }
+  
+  
+  
+  .header-alumno {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .btn-volver {
+    margin-left: auto;
+  }
+  
+  .horizontal-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  
+  .horizontal-list li {
+    flex-basis: 20%; /* Ajusta el valor según tus necesidades */
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .tag {
+    background-color: #ADD8E6;
+    border: 1px solid #ADD8E6;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #032B44;
+    font-size: 14px;
+    font-weight: bold;
+    width: 100%; /* Ajusta el valor según tus necesidades */
+    text-align: center; /* Agrega esta propiedad para centrar el texto */
+    display: flex; /* Agrega esta propiedad para que el texto se ajuste */
+    justify-content: center; /* Agrega esta propiedad para justificar el texto */
+    align-items: center; /* Agrega esta propiedad para centrar el texto verticalmente */
+  }
+  
+  .btn-volver {
+    background-color: #4ea160d3; /* verde */
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px; /* agregar bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* agregar sombra */
+    transition: background-color 0.2s; /* agregar efecto de transición */
+  }
+  
+  .btn-volver:hover {
+    background-color: #45ad49; /* verde oscuro */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); /* aumentar sombra al pasar el mouse */
+  }
+  
+  .btn-volver:active {
+    background-color: #2f6f31; /* verde oscuro */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6); /* aumentar sombra al hacer clic */
+  }

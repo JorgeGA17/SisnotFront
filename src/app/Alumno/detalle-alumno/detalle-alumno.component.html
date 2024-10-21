@@ -1,0 +1,31 @@
+<div class="detalle-alumno-container">
+    <div class="detalle-alumno" *ngIf="alumno">
+
+        <div class="header-alumno">
+            <h1>Alumno: {{ alumno.nombre }}</h1>
+            <button class="btn-volver" (click)="volver()">Volver</button>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item">ID:</div>
+            <div class="grid-item">{{ alumno.id}}</div>
+            <div class="grid-item">Nombre:</div>
+            <div class="grid-item">{{ alumno.nombre }}</div>
+            <div class="grid-item">DNI:</div>
+            <div class="grid-item">{{ alumno.dni }}</div>
+            <div class="grid-item">Dirección:</div>
+            <div class="grid-item">{{ alumno.direccion}}</div>
+            <div class="grid-item">Email:</div>
+            <div class="grid-item">{{ alumno.email}}</div>
+            <div class="grid-item">Celular:</div>
+            <div class="grid-item">{{ alumno.celular}}</div>
+            <div class="grid-item">Estado:</div>
+            <div class="grid-item">{{ alumno.estado}}</div>
+            <div class="grid-item">Cursos Registados:</div>
+            <div class="grid-item" *ngFor="let curso of alumno.listaCursos"></div>
+            
+   
+
+        </div>
+    </div>
+</div>

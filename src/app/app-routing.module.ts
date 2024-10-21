@@ -13,6 +13,7 @@ import { ListaNotasComponent } from './Nota/lista-notas/lista-notas.component';
 import { RegistarNotaComponent } from './Nota/registar-nota/registar-nota.component';
 import { ActualizarNotasComponent } from './Nota/actualizar-notas/actualizar-notas.component';
 import { ActualizarDocenteComponent } from './Docente/actualizar-docente/actualizar-docente.component';
+import { DetalleAlumnoComponent } from './Alumno/detalle-alumno/detalle-alumno.component';
 
 const routes: Routes = [
   { path: 'home', component:HomeComponent},
@@ -33,6 +34,9 @@ const routes: Routes = [
   {path:'lista-notas', component:ListaNotasComponent},
   {path:'registrar-notas', component:RegistarNotaComponent},
   {path:'actualizar-nota/:id', component: ActualizarNotasComponent},
+
+  {path:'detalle-alumno/:id', component: DetalleAlumnoComponent},
+
 
 
 
