@@ -20,6 +20,19 @@ export class AlumnoService {
     getAlumnoById(id:number):Observable<Alumno>{
       return this.http.get<Alumno>(this.urlEndPoint+'/'+ id);
     }
+
+    createAlumno(alumno:Alumno): Observable<Alumno>{
+      return this.http.post<Alumno>(this.urlEndPoint,alumno);
+    }
+    
+    updateAlumno(alumno:Alumno): Observable<Alumno>{
+      return this.http.put<Alumno>(this.urlEndPoint+'/'+alumno.id,alumno);
+    }
+
+    deleteAlumno(id:number):Observable<any>{
+      return this.http.delete(this.urlEndPoint+'/'+id);
+    }
+    
   
   }
 

@@ -10,9 +10,30 @@ import { Router } from '@angular/router';
 })
 export class ListaAlumnosComponent implements OnInit {
   alumnos: Alumno[];
+  filterAlumno='';
+
   constructor(private alumnoService:AlumnoService, private router:Router){}
    ngOnInit(): void {
 
+    this.getAlumnos();
+
     } 
+
+    private getAlumnos(){
+      this.alumnoService.getAllAlumnos().subscribe(dato =>{
+        this.alumnos=dato;
+      });
+    }
+
+    updateAlumno(id:number){
+      this.router.navigate(['actualizar-alumno',id]);
+    }
+
+    deleteAlumno(id: number) {
+      this.alumnoService.deleteAlumno(id).subscribe(dato => {
+        this.getAlumnos(); 
+      });
+    }
+    
 
 }

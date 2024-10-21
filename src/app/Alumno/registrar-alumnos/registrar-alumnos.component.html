@@ -1,1 +1,84 @@
-<p>registrar-alumnos works!</p>
+<div class="col-md-6 offset-md-3 container-fluid">
+    <h3 class="text-center">
+        Registro de Alumno
+    </h3>
+
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label>
+                Nombre:
+            </label>
+            <input type="text" class="form-control" id="nombre" [(ngModel)]="alumno.nombre" name="nombre">
+        </div>
+        <div class="form-group">
+            <label>
+                Apellido Paterno:
+            </label>
+            <input type="text" class="form-control" id="apellidoPaterno" [(ngModel)]="alumno.apellidoPaterno"
+                name="apellidoPaterno">
+        </div>
+
+        <div class="form-group">
+            <label>
+                Apellido Materno:
+            </label>
+            <input type="text" class="form-control" id="apellidoMaterno" [(ngModel)]="alumno.apellidoMaterno"
+                name="apellidoMaterno">
+        </div>
+
+        <div class="form-group">
+            <label>
+                DNI:
+            </label>
+            <input type="text" class="form-control" id="dni" [(ngModel)]="alumno.dni" name="dni">
+        </div>
+
+        <div class="form-group">
+            <label>
+                Dirección:
+            </label>
+            <input type="text" class="form-control" id="direccion" [(ngModel)]="alumno.direccion" name="direccion">
+        </div>
+
+        <div class="form-group">
+            <label>
+                Email:
+            </label>
+            <input type="text" class="form-control" id="email" [(ngModel)]="alumno.email" name="email">
+        </div>
+
+        <div class="form-group">
+            <label>
+                Celular:
+            </label>
+            <input type="text" class="form-control" id="celular" [(ngModel)]="alumno.celular" name="celular">
+        </div>
+
+        <div class="form-group">
+            <label>
+                Estado:
+            </label>
+            <input type="text" class="form-control" id="estado" [(ngModel)]="alumno.estado" name="estado">
+        </div>
+
+        <div class="form-group">
+            <label>Cursos (selecciona uno o más):</label>
+            <select class="form-control" [(ngModel)]="selectedCursoId" name="curso" (change)="onCursoSelect($event.target.value)">
+                <option *ngFor="let curso of cursos" [value]="curso.id">{{ curso.nomCurso }}</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label>Cursos Seleccionados:</label>
+            <ul>
+                <li *ngFor="let curso of alumno.cursoIds" class="curso-item">
+                    {{ getCursoNombre(curso) }}
+                    <button type="button" class="eliminar-btn" (click)="removeCurso(curso)">Eliminar</button>
+                </li>
+            </ul>
+        </div>
+
+        <button class="btn btn-success">Guardar</button>
+
+    </form>
+</div>

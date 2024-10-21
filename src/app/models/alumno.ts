@@ -8,7 +8,7 @@ export class Alumno {
     email:string;
     celular: string;
     estado: string;
-    cursoIds: string;
+    cursoIds: number[];
     listaCursos: string;
     fechaIngreso:Date;
     

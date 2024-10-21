@@ -1,0 +1,16 @@
+p {
+    font-size: 15px;
+    color: #333; /* Color gris oscuro */
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px; /* Espaciado superior */
+}
+
+.contador {
+    background-color: #f9f9f9; /* Fondo claro */
+    border: 0.5px solid #ddd; /* Borde gris claro más delgado */
+    border-radius: 4px; /* Bordes redondeados */
+    padding: 3px; /* Espaciado interno reducido */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    display: inline-block; /* Alineación en línea */
+}

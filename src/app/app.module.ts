@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { FilterPipe } from './pipes/filter.pipe';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { VisitasComponent } from "./visitas/visitas.component";
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
     ActualizarNotasComponent,
     ListaNotasComponent,
     RegistarNotaComponent,
-    FilterPipe
+    FilterPipe,
+    VisitasComponent
   ],
   imports: [
     BrowserModule,
@@ -42,8 +44,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
     HttpClientModule,
     FormsModule,
     NgSelectModule
-    
-  ],
+],
   providers: [],
   bootstrap: [AppComponent]
 })
