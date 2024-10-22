@@ -6,7 +6,6 @@ nomCurso: string;
 ciclo: string;
 credito:string;
 estado:string;
-listaDocentes:Docente[];
-
+listaDocentes:string;
 }
 

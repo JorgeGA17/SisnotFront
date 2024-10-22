@@ -21,7 +21,8 @@
             <div class="grid-item">{{ alumno.celular}}</div>
             <div class="grid-item">Estado:</div>
             <div class="grid-item">{{ alumno.estado}}</div>
-            <div class="grid-item">Cursos Registados:</div>          
+            <div class="grid-item">Cursos Registados:</div>
+            <div class="grid-item" [innerHTML]="alumno.listaCursos | formatCursos"></div>
    
 
         </div>

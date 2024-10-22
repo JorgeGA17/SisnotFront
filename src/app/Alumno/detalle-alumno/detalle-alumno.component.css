@@ -8,9 +8,7 @@
     margin-right: auto; /* centrar horizontalmente */
   }
   
-  .detalle-alumno {
-    margin-top: calc(50px + 20px); /* ajusta el margen superior para que el contenido se desplace hacia abajo */
-  }
+
   
   .detalle-alumno h1 {
   
