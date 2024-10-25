@@ -13,7 +13,7 @@ import { CursoService } from '../../Service/curso.service';
 export class RegistrarAlumnosComponent implements OnInit {
   alumno:Alumno = new Alumno();
   cursos: Curso[] = [];
-  selectedCursoId: number | null = null; // Variable para el curso seleccionado
+  selectedCursoId: number | null = null; 
 
 
   constructor(private alumnoService:AlumnoService, private router:Router,    private cursoService: CursoService){
@@ -43,20 +43,22 @@ export class RegistrarAlumnosComponent implements OnInit {
     this.guardarAlumno();
   }
 
- // Maneja la selección de cursos
- onCursoSelect(selectedId: string) {
-  const cursoId = parseInt(selectedId, 10);
-  if (cursoId && !this.alumno.cursoIds.includes(cursoId)) {
-      this.alumno.cursoIds.push(cursoId);
-  }
-}
 
-// Eliminar un curso de la selección
+  onCursoSelect(event: Event) {
+    const target = event.target as HTMLSelectElement; 
+    const selectedId = target.value; 
+    const cursoId = parseInt(selectedId, 10);
+    
+    if (cursoId && !this.alumno.cursoIds.includes(cursoId)) {
+      this.alumno.cursoIds.push(cursoId);
+    }
+  }
+
 removeCurso(cursoId: number) {
   this.alumno.cursoIds = this.alumno.cursoIds.filter(id => id !== cursoId);
 }
 
-// Obtener el nombre del curso por su ID
+
 getCursoNombre(cursoId: number): string {
   const curso = this.cursos.find(c => c.id === cursoId);
   return curso ? curso.nomCurso : 'Curso no encontrado';

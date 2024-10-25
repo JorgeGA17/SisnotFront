@@ -1,5 +1,3 @@
-import { Curso } from "./curso";
-
 export class Docente {
     
     id: number;
@@ -12,5 +10,5 @@ export class Docente {
     celular: string;
     estado: string;
     cursoIds: number[]; // Cambiado a un arreglo de números
-    listaCursos: Curso[];
+    listaCursos: string[];
 }

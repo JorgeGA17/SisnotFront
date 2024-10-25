@@ -63,7 +63,7 @@
 
         <div class="form-group">
             <label>Cursos (selecciona uno o más):</label>
-            <select class="form-control" [(ngModel)]="selectedCursoId" name="curso" (change)="onCursoSelect($event.target.value)">
+            <select class="form-control" [(ngModel)]="selectedCursoId" name="curso" (change)="onCursoSelect($event)">
                 <option *ngFor="let curso of cursos" [value]="curso.id">{{ curso.nomCurso }}</option>
             </select>
         </div>
