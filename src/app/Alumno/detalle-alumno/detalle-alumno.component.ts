@@ -9,7 +9,7 @@ import { ListcursosPipe } from '../../pipes/listcursos.pipe';
 @Component({
   selector: 'app-detalle-alumno',
   standalone: true,
-  imports: [CommonModule,ListcursosPipe], // Asegúrate de que esto esté aquí
+  imports: [CommonModule,ListcursosPipe], 
   templateUrl: './detalle-alumno.component.html',
   styleUrls: ['./detalle-alumno.component.css']
 })
@@ -29,11 +29,9 @@ export class DetalleAlumnoComponent implements OnInit {
             this.id = parseInt(idParam, 10);
             this.alumnoService.getAlumnoById(this.id).subscribe(data => {
                 this.alumno = data;
-                console.log('Datos del alumno:', this.alumno); // Log para verificar los datos
-
-                // No unir listaCursos, mantenerlo como un arreglo
+         
                 if (!Array.isArray(this.alumno.listaCursos)) {
-                    this.alumno.listaCursos = [this.alumno.listaCursos]; // Asegúrate de que sea un arreglo
+                    this.alumno.listaCursos = [this.alumno.listaCursos];
                 }
             });
         } else {

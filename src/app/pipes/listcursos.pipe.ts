@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class ListcursosPipe implements PipeTransform {
 
-  transform(value: string | string[]): string {
+  transform(value: string | string[], format: 'full' | 'names' = 'full'): string {
     // Validar que el valor sea una cadena o un arreglo
     if (!value || (typeof value === 'string' && value.trim() === '')) {
       return 'No hay cursos disponibles';
@@ -15,8 +15,12 @@ export class ListcursosPipe implements PipeTransform {
     // Si es un arreglo, convertirlo a una cadena
     const cursosArray = Array.isArray(value) ? value : [value];
     
+    if (format === 'names') {
+      // Solo devolver los nombres de los cursos
+      return cursosArray.map(curso => curso.split(':')[0].trim()).join(', ');
+    }
+
     const formattedCursos = cursosArray.map(curso => {
-      console.log('Curso procesado:', curso); // Agregar este log para cada curso
       const cursoNombre = curso.split(':')[0].trim();
       const docentes = this.extractDocentes(curso);
       const notas = this.extractNotas(curso);
@@ -42,7 +46,7 @@ export class ListcursosPipe implements PipeTransform {
     if (docentesMatch) {
       return docentesMatch[1].split(',').map(docente => `<li>${docente.trim()}</li>`).join('');
     }
-    return '<li>Sin Docente</li>'; // Cambiado a lista
+    return '<li>Sin Docente</li>';
   }
 
   private extractNotas(curso: string): string {
@@ -50,6 +54,6 @@ export class ListcursosPipe implements PipeTransform {
     if (notasMatch) {
       return notasMatch[1].split(',').map(nota => `<li>${nota.trim()}</li>`).join('');
     }
-    return '<li>Sin Notas</li>'; // Cambiado a lista
+    return '<li>Sin Notas</li>';
   }
 }
