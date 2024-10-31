@@ -9,6 +9,6 @@ export class Docente {
     email: string;
     celular: string;
     estado: string;
-    cursoIds: number[]; // Cambiado a un arreglo de números
+    cursoIds: number[]; 
     listaCursos: string[];
 }

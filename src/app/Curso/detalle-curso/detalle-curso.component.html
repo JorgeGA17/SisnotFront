@@ -1,0 +1,24 @@
+<div class="detalle-curso-container">
+    <div class="detalle-curso" *ngIf="curso">
+
+        <div class="header-curso">
+            <h1>Curso: {{ curso.nomCurso }}</h1>
+            <button class="btn-volver" (click)="volver()">Volver</button>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item">ID:</div>
+            <div class="grid-item">{{ curso.id}}</div>
+            <div class="grid-item">Nombre:</div>
+            <div class="grid-item">{{ curso.nomCurso }}</div>
+            <div class="grid-item">Ciclo:</div>
+            <div class="grid-item">{{ curso.ciclo }}</div>
+            <div class="grid-item">Credito:</div>
+            <div class="grid-item">{{ curso.credito}}</div>
+            <div class="grid-item">Estado:</div>
+            <div class="grid-item">Docentes Registados:</div>
+            <div class="grid-item">{{ curso.listaDocentes}}</div>
+   
+        </div>
+    </div>
+</div>

@@ -7,16 +7,15 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class ListcursosPipe implements PipeTransform {
 
   transform(value: string | string[], format: 'full' | 'names' = 'full'): string {
-    // Validar que el valor sea una cadena o un arreglo
+
     if (!value || (typeof value === 'string' && value.trim() === '')) {
       return 'No hay cursos disponibles';
     }
 
-    // Si es un arreglo, convertirlo a una cadena
     const cursosArray = Array.isArray(value) ? value : [value];
-    
+
     if (format === 'names') {
-      // Solo devolver los nombres de los cursos
+
       return cursosArray.map(curso => curso.split(':')[0].trim()).join(', ');
     }
 

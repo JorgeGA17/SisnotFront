@@ -16,5 +16,21 @@ export class CursoService {
     return this.http.get<any[]>(this.urlEndPoint);
   }
   
+  getCursoById(id:number):Observable<Curso>{
+    return this.http.get<Curso>(this.urlEndPoint+'/'+ id);
+  }
+
+  createCurso(curso:Curso): Observable<Curso>{
+    return this.http.post<Curso>(this.urlEndPoint,curso);
+  }
+  
+  updateCurso(curso:Curso): Observable<Curso>{
+    return this.http.put<Curso>(this.urlEndPoint+'/'+curso.id,curso);
+  }
+
+  deleteCurso(id:number):Observable<any>{
+    return this.http.delete(this.urlEndPoint+'/'+id);
+  }
+
 
 }

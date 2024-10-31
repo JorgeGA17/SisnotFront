@@ -10,7 +10,15 @@ export class FilterPipe implements PipeTransform {
 
     const result = [];
     for (const item of value) {
-      if (type === 'docente') {
+
+      if (type === 'curso') {
+        // Filtrado para Curso
+        if (item.nomCurso.toLowerCase().indexOf(arg.toLowerCase()) > -1) {
+          result.push(item);
+        }
+      }
+      
+      else if (type === 'docente') {
         // Filtrado para docentes
         if (item.nombre.toLowerCase().indexOf(arg.toLowerCase()) > -1) {
           result.push(item);

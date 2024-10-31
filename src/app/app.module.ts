@@ -11,8 +11,6 @@ import { ActualizarDocenteComponent } from './Docente/actualizar-docente/actuali
 import { RegistrarCursoComponent } from './Curso/registrar-curso/registrar-curso.component';
 import { ListaCursosComponent } from './Curso/lista-cursos/lista-cursos.component';
 import { ActualizarCursosComponent } from './Curso/actualizar-cursos/actualizar-cursos.component';
-import { ActualizarNotasComponent } from './Nota/actualizar-notas/actualizar-notas.component';
-import { ListaNotasComponent } from './Nota/lista-notas/lista-notas.component';
 import { RegistarNotaComponent } from './Nota/registar-nota/registar-nota.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -20,6 +18,11 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { VisitasComponent } from "./visitas/visitas.component";
 import { CommonModule } from '@angular/common';
+import { ActualizarNotasComponent } from './Nota/actualizar-notas/actualizar-notas.component';
+import { HomeComponent } from './home/home.component';
+import { SliderComponent } from './home/slider/slider.component';
+import { FooterComponent } from './home/footer/footer.component';
+
 
 @NgModule({
   declarations: [
@@ -33,11 +36,13 @@ import { CommonModule } from '@angular/common';
     RegistrarCursoComponent,
     ListaCursosComponent,
     ActualizarCursosComponent,
-    ActualizarNotasComponent,
-    ListaNotasComponent,
     RegistarNotaComponent,
     FilterPipe,
-    VisitasComponent
+    VisitasComponent,
+    ActualizarNotasComponent,
+    HomeComponent,
+    SliderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

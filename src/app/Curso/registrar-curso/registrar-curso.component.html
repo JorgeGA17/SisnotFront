@@ -1,1 +1,38 @@
-<p>registrar-curso works!</p>
+<div class="col-md-6 offset-md-3 container-fluid">
+    <h3 class="text-center">
+        Registro de Curso Nuevo
+    </h3>
+
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label>
+                Nombre:
+            </label>
+            <input type="text" class="form-control" id="nombre" [(ngModel)]="curso.nomCurso" name="nombre">
+        </div>
+        <div class="form-group">
+            <label>
+                Ciclo:
+            </label>
+            <input type="text" class="form-control" id="Ciclo" [(ngModel)]="curso.ciclo" name="Ciclo">
+        </div>
+
+        <div class="form-group">
+            <label>
+                Credito:
+            </label>
+            <input type="text" class="form-control" id="apellidoMaterno" [(ngModel)]="curso.credito"
+                name="apellidoMaterno">
+        </div>
+
+        <div class="form-group">
+            <label>
+                Estado:
+            </label>
+            <input type="text" class="form-control" id="dni" [(ngModel)]="curso.estado" name="dni">
+        </div>
+
+        <button class="btn btn-success">Guardar</button>
+
+    </form>
+</div>

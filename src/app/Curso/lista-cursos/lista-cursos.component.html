@@ -1,1 +1,35 @@
-<p>lista-cursos works!</p>
+<div  class="container-fluid" style="width: 100%;">
+    <h2 class="text-center">Lista Cursos</h2>
+     <div class="row">
+       <div class="col">
+         <div class="form-group">
+           <input type="text" class="form-control" placeholder="Buscar..." [(ngModel)]="filterCurso">
+         </div>
+       </div>
+     </div>
+  
+  <table id="example" class="table" style="width:100%">
+     <thead class="thead-dark">
+       <tr>
+         <th scope="col">#</th>
+         <th scope="col">Nombre Curso</th>
+         <th scope="col">Ciclo</th>
+         <th scope="col">Acciones</th>
+       </tr>
+     </thead>
+     <tbody>
+      <tr *ngFor="let curso of cursos | filter: filterCurso: 'curso'; let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{curso.nomCurso}}</td>
+        <td>{{curso.ciclo}}</td>
+        <td>
+          <button (click)="updateCurso(curso.id)" class="btn btn-success">Editar</button>
+          <button (click)="deleteCurso(curso.id)" class="btn btn-danger ml-2">Eliminar</button>
+          <button [routerLink]="['/detalle-curso', curso.id]" class="ver-detalle-button">
+            Ver detalle
+          </button>
+        </td>
+      </tr>
+     </tbody>
+   </table>
+  </div>
