@@ -16,6 +16,13 @@ export class NotaService {
     return this.http.get<any[]>(this.urlEndPoint);
   }
   
+  createNota(nota:Nota): Observable<Nota>{
+    return this.http.post<Nota>(this.urlEndPoint,nota);
+  }
 
+  updateNotasByAlumnoId(alumnoId: number, cursoId: number, nota: Nota): Observable<void> {
+    const url = `${this.urlEndPoint}/alumno/${alumnoId}/curso/${cursoId}`;
+    return this.http.put<void>(url, nota);
+  }
 
 }

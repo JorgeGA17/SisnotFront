@@ -32,10 +32,9 @@ const routes: Routes = [
   { path: 'actualizar-curso/:id', component: ActualizarCursosComponent },
 
   { path: 'registrar-notas', component: RegistarNotaComponent },
-  { path: 'actualizar-nota/:id', component: ActualizarNotasComponent },
+  { path: 'actualizar-notas', component: ActualizarNotasComponent },
 
   { path: 'detalle-alumno/:id', component: DetalleAlumnoComponent },
-
   { path: 'detalle-curso/:id', component: DetalleCursoComponent },
 
 ];

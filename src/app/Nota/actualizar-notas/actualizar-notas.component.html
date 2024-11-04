@@ -1,1 +1,41 @@
-<p>actualizar-notas works!</p>
+<div class="form-container">
+  <h2>Actualizar Nota</h2>
+  <form (ngSubmit)="actualizarNota()">
+    
+    <div class="form-group">
+      <label for="alumnoId">Seleccionar Alumno:</label>
+      <select [(ngModel)]="nota.alumnoId" name="alumnoId" (change)="loadAlumnos()" required>
+        <option *ngFor="let alumno of alumnos" [value]="alumno.id">{{ alumno.nombre }} {{ alumno.apellidoPaterno }} {{ alumno.apellidoMaterno }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="cursoId">Seleccionar Curso:</label>
+      <select [(ngModel)]="nota.cursoId" name="cursoId" (change)="loadCursos()" required>
+        <option *ngFor="let curso of cursos" [value]="curso.id">{{ curso.nomCurso }}</option>
+      </select>
+    </div>
+
+    <div class="form-group ">
+      <label for="componente1Nota">Componente 1 Nota:</label>
+      <input type="number" [(ngModel)]="nota.componente1Nota" name="componente1Nota" required>
+    </div>
+
+    <div class="form-group">
+      <label for="componente2Nota">Componente 2 Nota:</label>
+      <input type="number" [(ngModel)]="nota.componente2Nota" name="componente2Nota" required>
+    </div>
+
+    <div class="form-group">
+      <label for="componente3Nota">Componente 3 Nota:</label>
+      <input type="number" [(ngModel)]="nota.componente3Nota" name="componente3Nota" required>
+    </div>
+
+    <div class="form-group">
+      <label for="componente4Nota">Componente 4 Nota:</label>
+      <input type="number" [(ngModel)]="nota.componente4Nota" name="componente4Nota" required>
+    </div>
+
+    <button type="submit">Actualizar Nota</button>
+  </form>
+</div>

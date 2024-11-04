@@ -1,1 +1,40 @@
-<p>registar-nota works!</p>
+<div class="form-container">
+  <h2>Registrar Nota</h2>
+  <form (ngSubmit)="crearNota()">
+    <div class="form-group">
+      <label for="componente1Nota">Componente 1 Nota:</label>
+      <input type="number" [(ngModel)]="nota.componente1Nota" name="componente1Nota" required>
+    </div>
+
+    <div class="form-group">
+      <label for="componente2Nota">Componente 2 Nota:</label>
+      <input type="number" [(ngModel)]="nota.componente2Nota" name="componente2Nota" required>
+    </div>
+
+    <div class="form-group">
+      <label for="componente3Nota">Componente 3 Nota:</label>
+      <input type="number" [(ngModel)]="nota.componente3Nota" name="componente3Nota" required>
+    </div>
+
+    <div class="form-group">
+      <label for="componente4Nota">Componente 4 Nota:</label>
+      <input type="number" [(ngModel)]="nota.componente4Nota" name="componente4Nota" required>
+    </div>
+
+    <div class="form-group">
+      <label for="alumnoId">Seleccionar Alumno:</label>
+      <select [(ngModel)]="nota.alumnoId" name="alumnoId" required>
+        <option *ngFor="let alumno of alumnos" [value]="alumno.id">{{ alumno.nombre }} {{ alumno.apellidoPaterno }} {{ alumno.apellidoMaterno}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="cursoId">Seleccionar Curso:</label>
+      <select [(ngModel)]="nota.cursoId" name="cursoId" required>
+        <option *ngFor="let curso of cursos" [value]="curso.id">{{ curso.nomCurso }}</option>
+      </select>
+    </div>
+
+    <button type="submit">Registrar Nota</button>
+  </form>
+</div>
