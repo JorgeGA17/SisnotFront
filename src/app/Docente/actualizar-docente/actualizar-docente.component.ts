@@ -41,8 +41,8 @@ export class ActualizarDocenteComponent implements OnInit {
   }
 
   onSubmit() {
-    this.docente.id = this.id; // Asegúrate de que esto esté correcto
-    console.log('Submitting docente:', this.docente); // Verifica el contenido
+    this.docente.id = this.id; 
+    console.log('Submitting docente:', this.docente); 
     this.docenteService.updateDocente(this.docente).subscribe(
       dato => {
         this.irListaDocentes();
