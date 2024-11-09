@@ -51,7 +51,7 @@ export class ListcursosPipe implements PipeTransform {
   private extractNotas(curso: string): string {
     const notasMatch = curso.match(/Notas: \[(.*?)\]/);
     if (notasMatch) {
-      return notasMatch[1].split(',').map(nota => `<li>${nota.trim()}</li>`).join('');
+      return notasMatch[1].split(';').map(nota => `<li>${nota.trim()}</li>`).join('');
     }
     return '<li>Sin Notas</li>';
   }
