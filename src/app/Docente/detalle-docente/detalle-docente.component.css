@@ -1,4 +1,4 @@
-.detalle-curso-container {
+.detalle-docente-container {
     background-color: #fff; 
     padding: 20px; 
     border: 1px solid #ddd; 
@@ -9,7 +9,7 @@
   }
   
  
-  .detalle-curso h1 {
+  .detalle-docente h1 {
   
     text-align: left;
   }
@@ -30,7 +30,7 @@
     font-weight: bold;
   }
   
- .header-curso {
+ .header-docente {
     display: flex;
     justify-content: space-between;
     align-items: center;

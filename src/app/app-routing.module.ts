@@ -14,6 +14,7 @@ import { ActualizarNotasComponent } from './Nota/actualizar-notas/actualizar-not
 import { ActualizarDocenteComponent } from './Docente/actualizar-docente/actualizar-docente.component';
 import { DetalleAlumnoComponent } from './Alumno/detalle-alumno/detalle-alumno.component';
 import { DetalleCursoComponent } from './Curso/detalle-curso/detalle-curso.component';
+import { DetalleDocenteComponent } from './Docente/detalle-docente/detalle-docente.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -36,6 +37,7 @@ const routes: Routes = [
 
   { path: 'detalle-alumno/:id', component: DetalleAlumnoComponent },
   { path: 'detalle-curso/:id', component: DetalleCursoComponent },
+  { path: 'detalle-docente/:id', component: DetalleDocenteComponent },
 
 ];
 

@@ -1,33 +1,36 @@
-<div  class="container-fluid" style="width: 100%;">
+<div class="container-fluid" style="width: 100%;">
   <h2 class="text-center">Lista docentes</h2>
-   <div class="row">
-     <div class="col">
-       <div class="form-group">
-         <input type="text" class="form-control" placeholder="Buscar..." [(ngModel)]="filterDocente">
-       </div>
-     </div>
-   </div>
+  <div class="row">
+    <div class="col">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Buscar..." [(ngModel)]="filterDocente">
+      </div>
+    </div>
+  </div>
 
-<table id="example" class="table" style="width:100%">
-   <thead class="thead-dark">
-     <tr>
-       <th scope="col">#</th>
-       <th scope="col">Nombre</th>
-       <th scope="col">Email</th>
-       <th scope="col">Acciones</th>
-     </tr>
-   </thead>
-   <tbody>
-    <tr *ngFor="let docente of docentes | filter: filterDocente: 'docente'; let i = index">
-      <td>{{i + 1}}</td>
-      <td>{{docente.nombre}}</td>
-      <td>{{docente.email}}</td>
-      <td>
-        <button (click)="updateDocente(docente.id)" class="btn btn-success">Editar</button>
-        <button (click)="deleteDocente(docente.id)" class="btn btn-danger ml-2">Eliminar</button>
-      </td>
-    </tr>
-    
-   </tbody>
- </table>
+  <table id="example" class="table" style="width:100%">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Email</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let docente of docentes | filter: filterDocente: 'docente'; let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{docente.nombre}}</td>
+        <td>{{docente.email}}</td>
+        <td>
+          <button (click)="updateDocente(docente.id)" class="btn btn-success">Editar</button>
+          <button (click)="deleteDocente(docente.id)" class="btn btn-danger ml-2">Eliminar</button>
+          <button [routerLink]="['/detalle-docente', docente.id]" class="ver-detalle-button">
+            Ver detalle
+          </button>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
 </div>

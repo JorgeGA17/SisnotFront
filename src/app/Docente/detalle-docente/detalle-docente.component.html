@@ -1,0 +1,30 @@
+<div class="detalle-docente-container">
+    <div class="detalle-docente" *ngIf="docente">
+
+        <div class="header-docente">
+            <h1>Docente: {{ docente.nombre }}</h1>
+            <button class="btn-volver" (click)="volver()">Volver</button>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item">ID:</div>
+            <div class="grid-item">{{ docente.id}}</div>
+            <div class="grid-item">Nombre:</div>
+            <div class="grid-item">{{ docente.nombre }} {{ docente.apellidoPaterno }} {{ docente.apellidoMaterno }}</div>
+            <div class="grid-item">DNI:</div>
+            <div class="grid-item">{{ docente.dni }}</div>
+            <div class="grid-item">Dirección:</div>
+            <div class="grid-item">{{ docente.direccion}}</div>
+            <div class="grid-item">Email:</div>
+            <div class="grid-item">{{ docente.email}}</div>
+            <div class="grid-item">Celular:</div>
+            <div class="grid-item">{{ docente.celular}}</div>
+            <div class="grid-item">Estado:</div>
+            <div class="grid-item">{{ docente.estado}}</div>
+            <div class="grid-item">Cursos Registados:</div>
+            <div class="grid-item" [innerHTML]="docente.listaCursos | formatCursos"></div>
+   
+
+        </div>
+    </div>
+</div>
