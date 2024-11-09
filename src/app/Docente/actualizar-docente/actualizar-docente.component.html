@@ -60,12 +60,19 @@
         </div>
 
         <div class="form-group">
-            <label>
-               Cursos (selecciona uno o más):
-            </label>
-            <select class="form-control" [(ngModel)]="docente.cursoIds" name="curso" multiple (ngModelChange)="updateCursoIds($event)">
+            <label>Cursos (selecciona uno o más):</label>
+            <select class="form-control" [(ngModel)]="selectedCursoId" name="curso" (change)="onCursoSelect($event)">
                 <option *ngFor="let curso of cursos" [value]="curso.id">{{ curso.nomCurso }}</option>
             </select>
+        </div>
+        <div class="form-group">
+            <label>Cursos Seleccionados:</label>
+            <ul>
+                <li *ngFor="let curso of docente.cursoIds" class="curso-item">
+                    {{ getCursoNombre(curso) }}
+                    <button type="button" class="eliminar-btn" (click)="removeCurso(curso)">Eliminar</button>
+                </li>
+            </ul>
         </div>
     
         <button class="btn btn-success">Guardar</button>

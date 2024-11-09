@@ -1,0 +1,16 @@
+.eliminar-btn {
+    background-color: #ff0000; /* Color rojo */
+    color: #ffffff; /* Color blanco para el texto */
+    border: none; /* Elimina el borde del botón */
+    padding: 2px 4px; /* Agrega un poco de espacio alrededor del texto */
+    font-size: 12px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cambia el cursor a una mano cuando se pasa sobre el botón */
+}
+
+.eliminar-btn:hover {
+    background-color: #cc0000; /* Color rojo más oscuro cuando se pasa sobre el botón */
+}
+
+.curso-item {
+    margin-bottom: 10px; /* Espacio inferior entre los cursos */
+}
