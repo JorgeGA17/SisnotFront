@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Docente } from '../../models/docente';
 import { ActivatedRoute } from '@angular/router';
 import { DocenteService } from '../../Service/docente.service';
-import { ListcursosPipe } from "../../pipes/listcursos.pipe";
+import { ListcursodocentePipe } from "../../pipes/listcursodocente.pipe";
 import { CommonModule } from '@angular/common';
 import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-detalle-docente',
   standalone: true, 
-  imports: [CommonModule,ListcursosPipe], 
+  imports: [CommonModule,ListcursodocentePipe], 
   templateUrl: './detalle-docente.component.html',
   styleUrl: './detalle-docente.component.css'
 })
