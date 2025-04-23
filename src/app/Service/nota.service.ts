@@ -7,17 +7,16 @@ import { Nota } from '../models/nota';
   providedIn: 'root'
 })
 export class NotaService {
+  private urlEndPoint: string = 'http://localhost:8080/Sisnot/Notas';
 
-  [x: string]: any;
-  private urlEndPoint: string ='http://localhost:8080/Sisnot/Notas'
-  constructor(private http:HttpClient) { }
-  
-  getAllNotas():Observable<Nota[]>{
-    return this.http.get<any[]>(this.urlEndPoint);
+  constructor(private http: HttpClient) { }
+
+  getAllNotas(): Observable<Nota[]> {
+    return this.http.get<Nota[]>(this.urlEndPoint);
   }
-  
-  createNota(nota:Nota): Observable<Nota>{
-    return this.http.post<Nota>(this.urlEndPoint,nota);
+
+  createNota(nota: Nota): Observable<Nota> {
+    return this.http.post<Nota>(this.urlEndPoint, nota);
   }
 
   updateNotasByAlumnoId(alumnoId: number, cursoId: number, nota: Nota): Observable<void> {

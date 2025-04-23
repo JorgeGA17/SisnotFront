@@ -16,13 +16,14 @@ export class RegistarNotaComponent {
 
   nota: Nota = new Nota();
   alumnos: Alumno[] = [];
+  alumnosFiltrados: Alumno[] = []; // Alumnos filtrados
   cursos: Curso[] = [];
 
   constructor(
     private notaService: NotaService,
     private alumnoService: AlumnoService,
     private cursoService: CursoService,
-    private router: Router // Inyectar Router
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -34,6 +35,8 @@ export class RegistarNotaComponent {
     this.alumnoService.getAllAlumnos().subscribe(
       (data) => {
         this.alumnos = data;
+        this.alumnosFiltrados = data; 
+        console.log('Alumnos cargados:', this.alumnos); 
       },
       (error) => {
         console.error('Error al cargar alumnos', error);
@@ -52,6 +55,24 @@ export class RegistarNotaComponent {
     );
   }
 
+filtrarAlumnosPorCurso() {
+  console.log('Curso seleccionado:', this.nota.cursoId);
+  console.log('Alumnos cargados:', this.alumnos);
+  
+  if (this.nota.cursoId) {
+    const cursoIdSeleccionado = Number(this.nota.cursoId); 
+    this.alumnosFiltrados = this.alumnos.filter(alumno => {
+
+      const isEnrolled = Array.isArray(alumno.cursoIds) && alumno.cursoIds.includes(cursoIdSeleccionado);
+      
+      return isEnrolled;
+    });
+
+  } else {
+    this.alumnosFiltrados = this.alumnos; 
+  }
+}
+
   crearNota() {
     this.notaService.createNota(this.nota).subscribe(
       (response) => {
@@ -68,5 +89,4 @@ export class RegistarNotaComponent {
       }
     );
   }
-  
 }
