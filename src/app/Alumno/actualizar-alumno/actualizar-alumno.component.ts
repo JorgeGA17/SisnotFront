@@ -10,36 +10,38 @@ import { CursoService } from '../../Service/curso.service';
   templateUrl: './actualizar-alumno.component.html',
   styleUrls: ['./actualizar-alumno.component.css']
 })
+
+
 export class ActualizarAlumnoComponent implements OnInit {
   id: number;
   alumno: Alumno = new Alumno();
   cursos: Curso[] = [];
-  selectedCursoId: number | null = null; 
-
+  selectedCursoId: number | null = null;
+  cursosIniciales: number[] = [];
   constructor(
     private alumnoService: AlumnoService,
     private router: Router,
     private route: ActivatedRoute,
     private cursoService: CursoService
   ) { }
-
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
     this.alumnoService.getAlumnoById(this.id).subscribe(dato => {
-        this.alumno = dato;
-       
-        if (!this.alumno.cursoIds) {
-            this.alumno.cursoIds = []; 
-        }
-        
-    }, error => console.log(error));
+      this.alumno = dato;
 
+      this.cursosIniciales = [...this.alumno.cursoIds]; 
+
+      if (!this.alumno.cursoIds) {
+        this.alumno.cursoIds = [];
+      }
+
+    }, error => console.log(error));
     this.cursoService.getAllCursos().subscribe(data => {
-        this.cursos = data;
+      this.cursos = data;
     }, error => console.log(error));
-}
+  }
 
-  
+
   irListaAlumnos() {
     this.router.navigate(['/lista-alumnos']);
     swal('Alumno actualizado', `El alumno ${this.alumno.nombre} ha sido actualizado con éxito`, 'success');
@@ -58,10 +60,10 @@ export class ActualizarAlumnoComponent implements OnInit {
   }
 
   onCursoSelect(event: Event) {
-    const target = event.target as HTMLSelectElement; 
-    const selectedId = target.value; 
+    const target = event.target as HTMLSelectElement;
+    const selectedId = target.value;
     const cursoId = parseInt(selectedId, 10);
-    
+
     if (cursoId && !this.alumno.cursoIds.includes(cursoId)) {
       this.alumno.cursoIds.push(cursoId);
     }
